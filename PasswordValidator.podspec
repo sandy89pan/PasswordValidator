@@ -7,9 +7,9 @@ Pod::Spec.new do |s|
                         A Swift library that provides password validation. It checks if the password contains both letters and digits and is between 8 to 12 characters long.
                        DESC
 
-  s.homepage         = 'https://github.com/your_username/PasswordValidator'
+  s.homepage         = 'https://github.com/sandy89pan/PasswordValidator'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'sandy89pan' => 'sandy89pan@gmail.com' }
+  s.author           = { 'sandy.pan' => 'sandy.pan@ringcentral.com' }
   s.source           = { :git => 'https://github.com/sandy89pan/PasswordValidator.git', :tag => s.version.to_s }
   s.ios.deployment_target = '11.0'
 
