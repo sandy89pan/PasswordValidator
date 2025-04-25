@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name             = 'PasswordValidator'
+  s.name             = 'PasswordValidatorTest'
   s.version          = '0.1.2'
   s.summary          = 'A simple password validation library.'
 
