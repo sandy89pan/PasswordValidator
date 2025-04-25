@@ -7,36 +7,43 @@ VERSION=$1
 
 # 校验输入
 if [ -z "$VERSION" ]; then
-  echo "❌ 请提供版本号，例如：./release.sh 0.1.2"
+  echo "❌ 请输入版本号，例如：./release.sh 0.1.2"
   exit 1
 fi
 
-# 获取当前 podspec 文件名（假设当前目录只有一个 .podspec）
+# 获取 podspec 文件
 PODSPEC_FILE=$(ls *.podspec | head -n 1)
 
 if [ ! -f "$PODSPEC_FILE" ]; then
-  echo "❌ 找不到 .podspec 文件"
+  echo "❌ 没有找到 .podspec 文件"
   exit 1
 fi
 
-# 修改 podspec 中的版本号
-echo "🔧 正在更新 $PODSPEC_FILE 中的版本号为 $VERSION ..."
+echo "📄 使用 podspec 文件: $PODSPEC_FILE"
+
+# 修改 podspec 中版本号
+echo "🔧 修改版本号为 $VERSION ..."
 sed -i '' "s/^\(\s*s.version\s*=\s*\).*$/\1'$VERSION'/" "$PODSPEC_FILE"
 
 # 提交更改
-echo "📦 提交代码更改..."
+echo "📦 提交更改到 Git ..."
 git add .
 git commit -m "Release $VERSION"
 
 # 打 tag
-echo "🏷 生成 Git tag $VERSION ..."
-git tag $VERSION
+echo "🏷 创建 tag: $VERSION ..."
+git tag "$VERSION"
 
-# 推送代码 & tag
-echo "🚀 推送代码和 tag ..."
+# 推送代码和 tag
+echo "🚀 推送代码和 tag 到远程仓库..."
 git push
-git push origin $VERSION
+git push origin "$VERSION"
 
-# 提示
-echo "✅ 已完成发布准备，可执行 pod trunk push"
+# 执行 pod trunk push
+echo "📡 执行 pod trunk push ..."
+pod trunk push "$PODSPEC_FILE"
+
+# 完成
+echo "✅ 完成发布: $VERSION 🎉"
+
 
