@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
 
   s.homepage         = 'https://github.com/your_username/PasswordValidator'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'sandy.pan' => 'sandy.pan@example.com' }
-  s.source           = { :git => 'https://github.com/your_username/PasswordValidator.git', :tag => s.version.to_s }
+  s.author           = { 'sandy89pan' => 'sandy89pan@gmail.com' }
+  s.source           = { :git => 'https://github.com/sandy89pan/PasswordValidator.git', :tag => s.version.to_s }
   s.ios.deployment_target = '11.0'
 
   s.source_files = 'PasswordValidator/Classes/**/*'
