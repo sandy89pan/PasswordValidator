@@ -14,5 +14,5 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '12.0' # 建议从 12.0 起
   s.swift_versions = ['5.0']
-  s.source_files = 'PasswordValidator/Classes/**/*'
+  s.source_files = 'PasswordValidatorTest/Classes/**/*'
 end
