@@ -1,6 +1,6 @@
 import Foundation
 
-public class PasswordValidator {
+public class PasswordValidatorTest {
     public static func isValid(password: String) -> Bool {
         let pattern = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,12}$"
         guard let regex = try? NSRegularExpression(pattern: pattern) else { return false }
