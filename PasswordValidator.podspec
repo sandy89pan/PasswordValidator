@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
   s.author           = { 'sandy.pan' => 'sandy.pan@ringcentral.com' }
   s.source           = { :git => 'https://github.com/sandy89pan/PasswordValidator.git', :tag => s.version.to_s }
   s.ios.deployment_target = '11.0'
-
+  s.swift_versions = ['5.0']
   s.source_files = 'PasswordValidator/Classes/**/*'
 end
